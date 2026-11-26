@@ -137,6 +137,11 @@ nav .tour:hover{color:#0f2a24;filter:brightness(1.08)}
 
 body.pre nav>:not(.lang){display:none}
 body.pre .brand,body.pre #timeline,body.pre #labels,body.pre #hint{opacity:0;pointer-events:none}
+#credit{position:fixed;right:28px;bottom:24px;display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-size:11.5px;color:var(--muted);transition:opacity .8s}
+#credit img{height:48px;width:auto;display:block}
+.pcredit{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.pcredit img{height:40px;width:auto;display:block}
+@media (max-width:1279px){#credit{display:none}}
 body.panel-open #hint{opacity:0}
 
 @media (max-width:1100px){#hint{display:none}}
@@ -197,6 +202,7 @@ body.panel-open #hint{opacity:0}
   </div></div>
 </section>
 
+<div id="credit"><span data-i18n="madeBy"></span><img src="ory-logo.png" alt="ORY"></div>
 <p id="hint" data-i18n="hint"></p>
 
 <div id="intro">
@@ -239,6 +245,7 @@ const S={
   prevPlace:{pt:'Lugar anterior',en:'Previous place'}, nextPlace:{pt:'Próximo lugar',en:'Next place'},
   prevProj:{pt:'Projeto anterior',en:'Previous project'}, nextProj:{pt:'Próximo projeto',en:'Next project'},
   keywords:{pt:'Palavras-chave',en:'Keywords'}, stack:{pt:'Stack',en:'Stack'}, copy:{pt:'Copiar',en:'Copy'}, copied:{pt:'Copiado',en:'Copied'},
+  madeBy:{pt:'Desenvolvido por',en:'Made by'}, madeByLong:{pt:'Currículo interativo desenvolvido por',en:'Interactive résumé made by'},
   languages:{pt:'Idiomas',en:'Languages'}, skillsRing:{pt:'Anel de habilidades',en:'Skills ring'},
 };
 
@@ -650,6 +657,7 @@ const PANELS={
       :'Comfortable owning a system end to end, from PDF/OCR extraction and agent orchestration to API delivery, and collaborating in cross-functional teams with Git-based workflows.'}</p>
     <div class="facts"><div class="fact"><b>4</b><span>${lang==='pt'?'projetos em destaque':'featured projects'}</span></div><div class="fact"><b>4</b><span>${lang==='pt'?'experiências profissionais':'professional roles'}</span></div><div class="fact"><b>EN</b><span>${lang==='pt'?'inglês avançado':'advanced English'}</span></div></div>
     <div class="links"><a class="primary" href="${PORTFOLIO}" target="_blank" rel="noopener">${lang==='pt'?'Abrir portfólio de IA':'Open AI portfolio'}</a><a href="${GITHUB}" target="_blank" rel="noopener">GitHub</a></div>
+    <div class="pcredit"><span>${t(S.madeByLong)}</span><img src="ory-logo.png" alt="ORY"></div>
     <div class="pnav"><button data-go="lia"><small>${lang==='pt'?'Comece pelo presente':'Start with today'}</small>LIA · UFMS</button><button data-open="contato"><small>${lang==='pt'?'Fale com ele':'Get in touch'}</small>${t(S.navContact)}</button></div>`,
   projects:()=>`<p class="kicker">${lang==='pt'?'O grafo em órbita':'The orbiting graph'}</p><h2>${lang==='pt'?'Projetos em destaque':'Featured projects'}</h2>
     <p class="org">${lang==='pt'?'Cada nó do grafo que circula o planeta é um projeto. Os pacotes laranja correm pelas arestas como mensagens entre agentes.':'Each node of the graph circling the planet is a project. The orange packets travel along the edges like messages between agents.'}</p>
