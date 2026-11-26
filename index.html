@@ -630,8 +630,9 @@ function overview(){stopTour();mode='overview';controls.minDistance=14;controls.
   flyTo(camera.position.clone().normalize().multiplyScalar(overviewDist()),new THREE.Vector3(),1.8);}
 function focusPlace(key,fromTour=false){
   if(!fromTour)stopTour();
-  const p=placeMap[key],n=p.dir,s=new THREE.Vector3(0,-1,0).addScaledVector(n,n.y).normalize();
-  const center=n.clone().multiplyScalar(R+PLATEAU+.25),cam=center.clone().addScaledVector(n,3.3).addScaledVector(s,4.5);
+  // far-south places are seen from higher up: a low camera there ends up under the relief and upside down
+  const p=placeMap[key],n=p.dir,s=new THREE.Vector3(0,-1,0).addScaledVector(n,n.y).normalize(),south=n.y<-.5;
+  const center=n.clone().multiplyScalar(R+PLATEAU+.25),cam=center.clone().addScaledVector(n,south?6.2:3.3).addScaledVector(s,south?1.6:4.5);
   const fwd=center.clone().sub(cam).normalize(),right=new THREE.Vector3().crossVectors(fwd,n).normalize(),up=new THREE.Vector3().crossVectors(right,fwd);
   const shift=innerWidth>820?right.multiplyScalar(1.15):up.multiplyScalar(-1.25);center.add(shift);cam.add(shift);
   mode='place';controls.minDistance=2.5;controls.maxDistance=16;flyTo(cam,center,2.1);showPanel(key);}
