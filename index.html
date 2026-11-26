@@ -225,15 +225,15 @@ let lang=(()=>{const q=new URLSearchParams(location.search).get('lang');if(q==='
 const t=o=>o==null?'':typeof o==='string'?o:(o[lang]??o.pt);
 
 const S={
-  brandSub:{pt:'Engenheiro de IA, Campo Grande – MS',en:'AI Engineer, Campo Grande, Brazil'},
+  brandSub:{pt:'Pesquisador de IA, Campo Grande – MS',en:'AI Researcher, Campo Grande, Brazil'},
   navAbout:{pt:'Sobre',en:'About'}, navProjects:{pt:'Projetos',en:'Projects'}, navSkills:{pt:'Habilidades',en:'Skills'},
   navContact:{pt:'Contato',en:'Contact'}, navPortfolio:{pt:'Portfólio',en:'Portfolio'}, navPdf:{pt:'Currículo em PDF',en:'Résumé PDF (Portuguese)'},
   navOverview:{pt:'Ver o planeta inteiro',en:'View whole planet'}, tourStart:{pt:'Fazer o tour',en:'Take the tour'}, tourStop:{pt:'Parar o tour',en:'Stop the tour'},
   tlTitle:{pt:'Linha do tempo',en:'Timeline'}, tlHint:{pt:'Clique numa barra para viajar até o lugar',en:'Click a bar to fly to that place'}, now:{pt:'hoje',en:'today'},
   hint:{pt:'Arraste para girar o planeta, role para aproximar e clique nos lugares, nos nós do grafo ou no anel de habilidades.',en:'Drag to spin the planet, scroll to zoom, and click places, graph nodes or the skills ring.'},
   introPre:{pt:'Currículo interativo',en:'Interactive résumé'},
-  introRole:{pt:'Engenheiro de IA e estudante de Sistemas de Informação na UFMS. Constrói sistemas multiagente com LangGraph, da extração de PDF e OCR até a entrega via API.',
-             en:'AI engineer and Information Systems student at UFMS. Builds multi-agent systems with LangGraph, from PDF extraction and OCR all the way to API delivery.'},
+  introRole:{pt:'Pesquisador de IA e estudante de Sistemas de Informação na UFMS. Constrói sistemas multiagente com LangGraph, da extração de PDF e OCR até a entrega via API.',
+             en:'AI researcher and Information Systems student at UFMS. Builds multi-agent systems with LangGraph, from PDF extraction and OCR all the way to API delivery.'},
   introStart:{pt:'Explorar o planeta',en:'Explore the planet'},
   prevPlace:{pt:'Lugar anterior',en:'Previous place'}, nextPlace:{pt:'Próximo lugar',en:'Next place'},
   prevProj:{pt:'Projeto anterior',en:'Previous project'}, nextProj:{pt:'Próximo projeto',en:'Next project'},
@@ -644,7 +644,7 @@ function projectPanel(i){
 const PANELS={
   about:()=>`<p class="kicker">${lang==='pt'?'Perfil':'Profile'}</p><h2>Murilo Gamarra Bassan</h2><p class="org">${t(S.brandSub)}</p>
     <p class="body">${lang==='pt'?'Pesquisador de IA e estudante de Sistemas de Informação na UFMS, desenvolvendo sistemas multiagente com LangGraph no laboratório de IA da universidade (LIA). Experiência prática na construção de pipelines com LLMs para análise de documentos, automação de processos e geração de relatórios, com base sólida em desenvolvimento full stack (Java Spring Boot, Angular, Python/FastAPI).'
-      :'AI engineer and Information Systems student at UFMS, building multi-agent systems with LangGraph at the university’s AI lab (LIA). Hands-on experience building LLM pipelines for document analysis, process automation and report generation, on a solid full-stack foundation (Java Spring Boot, Angular, Python/FastAPI).'}</p>
+      :'AI researcher and Information Systems student at UFMS, building multi-agent systems with LangGraph at the university’s AI lab (LIA). Hands-on experience building LLM pipelines for document analysis, process automation and report generation, on a solid full-stack foundation (Java Spring Boot, Angular, Python/FastAPI).'}</p>
     <p class="body">${lang==='pt'?'Confortável conduzindo um sistema de ponta a ponta, da extração de PDF/OCR e orquestração de agentes até a entrega via API, e colaborando em equipes multidisciplinares com fluxos de trabalho baseados em Git.'
       :'Comfortable owning a system end to end, from PDF/OCR extraction and agent orchestration to API delivery, and collaborating in cross-functional teams with Git-based workflows.'}</p>
     <div class="facts"><div class="fact"><b>4</b><span>${lang==='pt'?'projetos em destaque':'featured projects'}</span></div><div class="fact"><b>4</b><span>${lang==='pt'?'experiências profissionais':'professional roles'}</span></div><div class="fact"><b>EN</b><span>${lang==='pt'?'inglês avançado':'advanced English'}</span></div></div>
